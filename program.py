@@ -10,7 +10,7 @@ def clm():
     while True:
         col = input('Enter Column Name: ')
         column.append(col)
-        choice = int(input('Enter 0 To End The Column Creation: \nEnter 1 To Continue Column Creation: '))
+        choice = int(input('Enter 0 To End The Column Creation \nEnter 1 To Continue Column Creation: '))
         if choice == 0 or choice != 1 or 0:
             break
         global col_count
@@ -46,20 +46,21 @@ def updater():
         reader = list(csv.reader(f))
         key = input('Enter Value You Want To Search For: ')
         key = key.lower()
-        flag = 0
-        to_be_updated = ''
-        for i in data_column:
-            if i.lower() == key:
-                print(i)
-                cell_no = int(input('Which cell would you like to delete?'))
-                to_be_updated = i
-                flag = 1
-                break
-        reader.pop(cell_no-1)
-        new_val = input(f'Enter New Value at the place of {to_be_updated}')
-        reader.insert(cell_no-1,new_val)
-        if flag == 0:
-            print('Value Not Found.')
+        # flag = 0
+        
+        # to_be_updated = ''
+        # for i in reader:
+        #     if i.lower() == key:
+        #         print(i)
+        #         cell_no = int(input('Which cell would you like to delete?'))
+        #         to_be_updated = i
+        #         flag = 1
+        #         break
+        # reader.pop(cell_no-1)
+        # new_val = input(f'Enter New Value at the place of {to_be_updated}')
+        # reader.insert(cell_no-1,new_val)
+        # if flag == 0:
+        #     print('Value Not Found.')
             
 clm()
 data()
