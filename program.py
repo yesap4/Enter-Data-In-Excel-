@@ -60,6 +60,18 @@ def updater():
             w = csv.writer(f)
             w.writerows(nrec)
             print('Value Updated Successfully...')
+def ins_n_row():
+    global data_column
+    data_column = []
+    no_of_entry = int(input('Enter Numbers Of Entry You Want To Do: '))
+    with open(filename, 'a', newline='') as f:
+        fobj = csv.writer(f)
+        row_data = []
+        for col_name in column:
+            val = input(f'Enter {col_name}: ')
+            row_data.append(val)
+        fobj.writerow(row_data)
+
 while True:        
     task = int(input('Enter 1 To Create A New File. \nEnter 2 To Search A Value. \nEnter 3 To Update A Value. \nEnter 4 To Insert New Row. \nEnter 5 To Exit: '))
     filename = input('Enter Your Desired Excel File Name: ')
@@ -74,6 +86,6 @@ while True:
     elif task == 3:
         updater()
     elif task == 4:
-        data()
+        ins_n_row()
     else:
         break
