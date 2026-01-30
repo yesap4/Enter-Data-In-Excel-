@@ -63,7 +63,6 @@ def updater():
 def ins_n_row():
     global data_column
     data_column = []
-    no_of_entry = int(input('Enter Numbers Of Entry You Want To Do: '))
     with open(filename, 'a', newline='') as f:
         fobj = csv.writer(f)
         row_data = []
