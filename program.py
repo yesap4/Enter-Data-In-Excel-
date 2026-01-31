@@ -1,4 +1,5 @@
 import csv
+import os
 def clm():
     global column
     column = []
@@ -122,20 +123,25 @@ def delete():
         writer.writerow(header)
         writer.writerow(new_data)
     print('\nValue Deleted Successfully...\n')
-    
+def open_file():
+    if os.path.exists(filename):
+        os.startfile(filename)
+    else:
+        print(f'\nFile Not Found... Please Create A File With This Name {filename} ')
 while True:
     task = int(input(
         'Enter 1 To Create A New File.'
-        '\nEnter 2 To Search A Value.'
-        '\nEnter 3 To Update A Value.'
-        '\nEnter 4 To Insert A New Row At a Specific Row Number.'
-        '\nEnter 5 To Insert New Row At The Last.'
-        '\nEnter 6 To Delete A Value.'
-        '\nEnter 7 To Exit. '
+        '\nEnter 2 To Open The File.'
+        '\nEnter 3 To Search A Value.'
+        '\nEnter 4 To Update A Value.'
+        '\nEnter 5 To Insert A New Row At a Specific Row Number.'
+        '\nEnter 6 To Insert New Row At The Last.'
+        '\nEnter 7 To Delete A Value.'
+        '\nEnter 8 To Exit. '
         '\nEnter Your Choice: '
     ))
 
-    if task == 7:
+    if task == 8:
         print('\n Thank You! ☻ \n')
         break
 
@@ -148,12 +154,14 @@ while True:
         clm()
         data()
     elif task == 2:
-        search()
+        open_file()
     elif task == 3:
-        updater()
+        search()
     elif task == 4:
-        ins_pos_row()
+        updater()
     elif task == 5:
-        ins_last_row()
+        ins_pos_row()
     elif task == 6:
+        ins_last_row()
+    elif task == 7:
         delete()
