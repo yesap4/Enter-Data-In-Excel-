@@ -28,7 +28,7 @@ def data():
                 row_data.append(val)
             fobj.writerow(row_data)
 def search():
-    with open(filename, 'r', newline='') as f:
+    with open(filename, 'r') as f:
         col_no = int(input('Enter Column Number In Which You Want To Search For The Value: '))
         key = input('Enter Value You Want To Search For: ')
         found = 0 
@@ -41,7 +41,7 @@ def search():
         if found == 0:
             print('\nValue Not Found.\n')
 def updater():
-    with open(filename, 'r', newline='') as f:
+    with open(filename, 'r') as f:
         col_no = int(input('Enter Column Number In Which You Want To Update The Value: '))
         key = input('Enter Value You Want To Update: ')
         found = 0
@@ -102,7 +102,7 @@ def ins_pos_row():
     print('\nRow Added Successfully...\n')
 def delete():
     key = input('Enter Value You Want To Delete.')
-    with open(filename, 'r', newline='') as f:
+    with open(filename, 'r') as f:
         rows = list(csv.reader(f))
 
     header = rows[0]
