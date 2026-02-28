@@ -105,6 +105,7 @@ python main.py
 - Real-world coding examples  
 
 📺 YouTube Channel: Cat Codes
+https://www.youtube.com/@cc_cat_codes
 
 ---
 
